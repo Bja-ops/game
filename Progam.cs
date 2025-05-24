@@ -114,6 +114,7 @@ class Program
                     if(c>z)
                     {
                         lives3 = lives3 - 1;
+                        tries3 = tries3 + 1;
                         Console.WriteLine("Too hight");
                         Console.WriteLine("Left tries: " + tries3);
                         if (lives3 == 0)
@@ -124,6 +125,7 @@ class Program
                     }
                     else if(c<z)
                     {
+                        tries3 = tries3 + 1;
                         lives3 = lives3 - 1;
                         Console.WriteLine("Too low");
                         Console.WriteLine("Left tries: " + lives3);
@@ -154,6 +156,7 @@ class Program
                     if(d>q)
                     {
                         lives4 = lives4 - 1;
+                        tries4 = tries4 + 1;
                         Console.WriteLine("Too high");
                         Console.WriteLine("Left tries: " + lives4);
                         if(lives4 == 0)
@@ -166,6 +169,7 @@ class Program
                     else if(d<q)
                     {
                         lives4 = lives4 - 1;
+                        tries4 = tries4 + 1;
                         Console.WriteLine("Too low");
                         Console.WriteLine("Left tries: " + lives4);
                         if(lives4 == 0)
@@ -177,7 +181,7 @@ class Program
                         else
                         {
                             Console.WriteLine("Congratulations, you guessed");
-                            Console.WriteLine();
+                            Console.WriteLine("Tries: " + tries4);
                         }
                     }
                 }
