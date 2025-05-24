@@ -111,7 +111,7 @@ class Program
                 while(c!=z)
                 {
                     Console.WriteLine("Try again");
-                    if(c!>z)
+                    if(c>z)
                     {
                         lives3 = lives3 - 1;
                         Console.WriteLine("Too hight");
@@ -122,11 +122,11 @@ class Program
                             break;
                         }
                     }
-                    else if(c!<z)
+                    else if(c<z)
                     {
-                        tries3 = tries3 - 1;
+                        lives3 = lives3 - 1;
                         Console.WriteLine("Too low");
-                        Console.WriteLine("Left tries: " + tries3);
+                        Console.WriteLine("Left tries: " + lives3);
                         if (lives3 == 0)
                         {
                             Console.WriteLine("Number was: " + z );
@@ -136,13 +136,51 @@ class Program
                     else
                     {
                         Console.WriteLine("Congratulations, you guessed");
+                        Console.WriteLine("Tries: " + tries3);
                         break;
                     }
                 }
                 break;
             case "4":
                 Console.WriteLine("Chose number between 1-1000");
-
+                Random random4 = new Random();
+                int lives4 = 15;
+                int tries4 = 0;
+                int q = random4.Next(1, 1001);
+                int d = Convert.ToInt32(Console.ReadLine());
+                while(d!=q)
+                {
+                    Console.WriteLine("Try again");
+                    if(d>q)
+                    {
+                        lives4 = lives4 - 1;
+                        Console.WriteLine("Too high");
+                        Console.WriteLine("Left tries: " + lives4);
+                        if(lives4 == 0)
+                        {
+                            Console.WriteLine("Game over");
+                            Console.WriteLine("Number was: " + q);
+                            break;
+                        }
+                    }
+                    else if(d<q)
+                    {
+                        lives4 = lives4 - 1;
+                        Console.WriteLine("Too low");
+                        Console.WriteLine("Left tries: " + lives4);
+                        if(lives4 == 0)
+                        {
+                            Console.WriteLine("Game over");
+                            Console.WriteLine("Number was: " + q);
+                            break;
+                        }
+                        else
+                        {
+                            Console.WriteLine("Congratulations, you guessed");
+                            Console.WriteLine();
+                        }
+                    }
+                }
                 break;
         }
     }
