@@ -186,6 +186,9 @@ class Program
                     }
                 }
                 break;
+            default:
+                Console.WriteLine("Wrong option");
+                break;
         }
     }
 }
