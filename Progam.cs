@@ -1,4 +1,5 @@
 using System;
+using System.ComponentModel.Design;
 
 class Program
 {
@@ -105,6 +106,43 @@ class Program
                 int lives3 = 10;
                 int tries3 = 0;
                 Console.WriteLine("Chose numbers between 1-100");
+                int z = random3.Next(1,101);
+                int c = Convert.ToInt32(Console.ReadLine());
+                while(c!=z)
+                {
+                    Console.WriteLine("Try again");
+                    if(c!>z)
+                    {
+                        lives3 = lives3 - 1;
+                        Console.WriteLine("Too hight");
+                        Console.WriteLine("Left tries: " + tries3);
+                        if (lives3 == 0)
+                        {
+                            Console.WriteLine("Number was: " + z);
+                            break;
+                        }
+                    }
+                    else if(c!<z)
+                    {
+                        tries3 = tries3 - 1;
+                        Console.WriteLine("Too low");
+                        Console.WriteLine("Left tries: " + tries3);
+                        if (lives3 == 0)
+                        {
+                            Console.WriteLine("Number was: " + z );
+                            break;
+                        }
+                    }
+                    else
+                    {
+                        Console.WriteLine("Congratulations, you guessed");
+                        break;
+                    }
+                }
+                break;
+            case "4":
+                Console.WriteLine("Chose number between 1-1000");
+
                 break;
         }
     }
